@@ -13,16 +13,17 @@ class Studio {
 private:
     std::string name;
     int yearFounded;
-    std::vector<Film*> films;  // Використовуємо вказівники
+    std::vector<Film*> films;
 
 public:
     Studio();
     Studio(std::string n, int y);
+    Studio(const Studio& other);
+    Studio(Studio&& other) noexcept;
     ~Studio();
 
-    void addFilm(Film* f);  // Приймає вказівник
+    void addFilm(Film* f);
     void display() const;
 };
 
 #endif // STUDIO_H
-

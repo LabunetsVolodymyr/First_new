@@ -13,14 +13,17 @@ class Director {
 private:
     std::string name;
     std::string birthdate;
-    std::vector<Film*> films;  // Використовуємо вказівники
+    std::vector<Film*> films;
 
 public:
     Director();
     Director(std::string n, std::string b);
+    Director(const Director& other);
+    Director(Director&& other) noexcept;
     ~Director();
 
-    void addFilm(Film* f);  // Приймає вказівник
+
+    void addFilm(Film* f);
     void display() const;
 };
 

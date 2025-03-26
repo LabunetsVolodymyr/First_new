@@ -17,6 +17,17 @@ int main() {
     director.display();
     studio.display();
 
+    std::cout << "\nTesting overloaded operators:\n";
+    std::cout << *film1 << std::endl;
+    std::cout << *film2 << std::endl;
+
+    if (!(*film1)) {
+        std::cout << "Film has a low rating!\n";
+    }
+
+    Film newFilm;
+    std::cin >> newFilm;
+    std::cout << "You entered: " << newFilm << std::endl;
 
     delete film1;
     delete film2;
